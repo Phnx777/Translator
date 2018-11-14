@@ -106,11 +106,7 @@ class StorageService: StorageServiceProtocol {
     }
     
     func saveContext() {
-        do {
-            try context.save()
-        } catch {
-            print("Данные не сохранились")
-        }
+        appDelegate.saveContext()
     }
     
 }

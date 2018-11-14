@@ -18,6 +18,8 @@ protocol TranslatorViewProtocol: class {
     func hideLoader()
 }
 
+
+
 class TranslatorViewController: UIViewController, TranslatorViewProtocol {
     @IBOutlet weak var translationBackgroundView: UIView!
     
@@ -30,12 +32,6 @@ class TranslatorViewController: UIViewController, TranslatorViewProtocol {
     
     var presenter: TranslatorPresenterProtocol!
     var configurator: TranslatorConfigurator = TranslatorConfigurator()
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-    {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configurator.configure(with: self)
-    }
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -54,7 +50,6 @@ class TranslatorViewController: UIViewController, TranslatorViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.checkNewLanguages()
         presenter.updateDirections()
         presenter.checkAutoFill()
     }

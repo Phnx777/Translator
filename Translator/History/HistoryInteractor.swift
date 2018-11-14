@@ -14,6 +14,7 @@ protocol HistoryDataStore {
 
 protocol HistoryInteractorProtocol: class {
     func getAllWords() -> [Word]?
+    func createWord(by string: String, separator: String) -> Word?
     func deleteAllWords()
 }
 
@@ -34,5 +35,17 @@ class HistoryInteractor: HistoryInteractorProtocol, HistoryDataStore {
     
     func deleteAllWords() {
         storageService.deleteAllWords()
+    }
+    
+    func createWord(by string: String,
+                    separator: String) -> Word? {
+        let words = string.components(separatedBy: separator)
+        guard words.count == 2,
+            let original = words.first,
+            let translation = words.last else {
+                return nil
+        }
+        return Word(original: original,
+                    translation: translation)
     }
 }

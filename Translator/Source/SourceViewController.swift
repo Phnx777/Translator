@@ -20,12 +20,6 @@ class SourceViewController: UIViewController, SourceViewProtocol {
     @IBOutlet weak var tableView: UITableView!
     let cellId = "sourceCell"
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-    {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configurator.configure(with: self)
-    }
-    
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)

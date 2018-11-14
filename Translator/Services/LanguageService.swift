@@ -12,18 +12,10 @@ protocol LanguageServiceProtocol {
     var leftLanguage: Language { set get }
     var rightLanguage: Language { set get }
     func saveAllLanguages(with dict: [String: String])
-    var direction: Direction  { get set }
     func getLanguage(by name: String) -> Language?
 }
 
-enum Direction {
-    case unknown
-    case left
-    case right
-}
-
 class LanguageService: LanguageServiceProtocol {
-    var direction: Direction = .unknown
     
     var leftLanguage: Language
     var rightLanguage: Language

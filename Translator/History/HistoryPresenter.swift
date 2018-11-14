@@ -37,14 +37,8 @@ class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func process(word: String) {
-        let w = word.components(separatedBy: separator)
-        guard w.count == 2,
-            let original = w.first,
-            let translation = w.last else {
-            return
-        }
-        router.dataStore?.word = Word(original: original,
-                                      translation: translation)
+        router.dataStore?.word = interactor.createWord(by: word,
+                                                       separator: separator)
     }
     
     func updateWords() {

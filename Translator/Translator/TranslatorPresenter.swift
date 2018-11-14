@@ -16,7 +16,6 @@ protocol TranslatorPresenterProtocol: class {
     func setTranslation(with text: String)
     func showAlertView(with text: String)
     func updateDirections()
-    func checkNewLanguages()
     func checkAutoFill()
     func showLoader()
     func hideLoader()
@@ -24,50 +23,54 @@ protocol TranslatorPresenterProtocol: class {
 
 class TranslatorPresenter: TranslatorPresenterProtocol {
     
-    var languageDirections = [String]()
-    
     var router: TranslatorRouterProtocol!
     weak var view: TranslatorViewProtocol!
     var interactor: TranslatorInteractorProtocol!
     
+    var leftValue: String = ""
+    var rightValue: String = ""
+    
     required init(view: TranslatorViewProtocol) {
-        self.view = view 
+        self.view = view
     }
     
     func configureView() {
+        leftValue = interactor.leftLanguage
+        rightValue = interactor.rightLanguage
         view.setTranslation(with: "")
         interactor.getLanguages()
     }
     
     func reverseDirection() {
-        languageDirections = languageDirections.reversed()
+        if let left = router?.dataStore?.leftLanguage,
+            let right = router?.dataStore?.rightLanguage {
+            router?.dataStore?.leftLanguage = right
+            router?.dataStore?.rightLanguage = left
+        } else {
+            let left = interactor.leftLanguage
+            let right = interactor.rightLanguage
+            interactor.leftLanguage = right
+            interactor.rightLanguage = left
+        }
         updateDirections()
     }
     
-    func checkNewLanguages() {
+    func updateDirections() {
         if let left = router?.dataStore?.leftLanguage,
             let right = router?.dataStore?.rightLanguage {
-            languageDirections = [left, right]
+            leftValue = left
+            rightValue = right
         } else {
-            languageDirections = interactor.languageDirections
+            leftValue = interactor.leftLanguage
+            rightValue = interactor.rightLanguage
         }
-    }
-    
-    func updateDirections() {
-        guard languageDirections.count == 2,
-            let leftValue = languageDirections.first,
-            let rightValue = languageDirections.last else {
-                return
-        }
+        
         view.changeLeftLanguageButton(title: leftValue)
         view.changeRightLanguageButton(title: rightValue)
     }
     
     func translate(text: String) {
-        guard languageDirections.count == 2,
-            let leftValue = languageDirections.first,
-            let rightValue = languageDirections.last,
-            let leftCode = interactor.getLanguage(by: leftValue)?.code,
+        guard let leftCode = interactor.getLanguage(by: leftValue)?.code,
             let rightCode = interactor.getLanguage(by: rightValue)?.code else {
                 return
         }

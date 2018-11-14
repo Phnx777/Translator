@@ -9,9 +9,7 @@
 import UIKit
 
 protocol SourceDataStore {
-    var direction: Direction { get set }
-    var selectedLanguage: String? { get set }
-    func getLanguages() -> [Language]?
+    var selectedLanguage: String? { get set } 
 }
 
 protocol SourceInteractorProtocol: class {
@@ -25,8 +23,6 @@ class SourceInteractor: SourceInteractorProtocol, SourceDataStore {
     let serverService: ServerServiceProtocol = ServerService()
     var languageService: LanguageServiceProtocol = LanguageService()
     var selectedLanguage: String?
-     
-    var direction: Direction = .unknown 
     
     required init(presenter: SourcePresenterProtocol) {
         self.presenter = presenter

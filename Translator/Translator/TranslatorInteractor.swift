@@ -8,8 +8,16 @@
 
 import UIKit
 
+enum Direction {
+    case unknown
+    case left
+    case right
+}
+
 protocol TranslatorDataStore {
     var word: Word? { set get }
+    
+    var direction: Direction { get set }
     var leftLanguage: String { set get }
     var rightLanguage: String { set get }
 }
@@ -20,16 +28,15 @@ protocol TranslatorInteractorProtocol: class {
                    toLang: String)
     func getLanguages()
     func getLanguage(by name: String) -> Language?
-    
-    var languageDirections :[String] { set get }
-    
+    var leftLanguage: String { set get }
+    var rightLanguage: String { set get } 
 }
 
 class TranslatorInteractor: TranslatorInteractorProtocol,
 TranslatorDataStore {
-    var word: Word?
     
-    var languageDirections: [String]
+    var direction: Direction = .unknown
+    var word: Word?
     
     var rightLanguage: String
     var leftLanguage: String
@@ -42,7 +49,6 @@ TranslatorDataStore {
         self.presenter = presenter
         rightLanguage = languageService.rightLanguage.name
         leftLanguage = languageService.leftLanguage.name
-        languageDirections = [leftLanguage, rightLanguage]
     }
     
     func getLanguage(by name: String) -> Language? {

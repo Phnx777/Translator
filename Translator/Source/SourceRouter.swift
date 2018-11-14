@@ -41,7 +41,7 @@ class SourceRouter: SourceRouterProtocol {
         guard let lang = dataStore.selectedLanguage else {
             return
         }
-        switch dataStore.direction {
+        switch destionation.direction {
         case .left:
             destionation.leftLanguage = lang
         case .right:
