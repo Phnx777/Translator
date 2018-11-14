@@ -8,6 +8,19 @@
 
 import UIKit
 
-class SourceConfigurator: NSObject {
+protocol SourceConfiguratorProtocol: class {
+    func configure(with viewController: SourceViewController)
+}
 
+class SourceConfigurator: SourceConfiguratorProtocol {
+    
+    func configure(with viewController: SourceViewController) {
+        let presenter = SourcePresenter(view: viewController)
+        let interactor = SourceInteractor(presenter: presenter)
+        let router = SourceRouter(viewController: viewController)
+        router.dataStore = interactor
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.router = router
+    }
 }

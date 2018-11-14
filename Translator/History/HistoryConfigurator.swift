@@ -8,6 +8,18 @@
 
 import UIKit
 
-class HistoryConfigurator: NSObject {
+protocol HistoryConfiguratorProtocol: class {
+    func configure(with viewController: HistoryTableViewController)
+}
 
+class HistoryConfigurator: HistoryConfiguratorProtocol {
+    func configure(with viewController: HistoryTableViewController) {
+        let presenter = HistoryPresenter(view: viewController)
+        let interactor = HistoryInteractor(presenter: presenter)
+        let router = HistoryRouter(viewController: viewController)
+        router.dataStore = interactor
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.router = router
+    }
 }

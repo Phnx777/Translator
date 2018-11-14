@@ -8,6 +8,9 @@
 
 import UIKit
 
-class Color_Extension: NSObject {
-
+extension UIColor {
+    static let mainYellow = UIColor(red: 253/255,
+                                    green: 219/255,
+                                    blue: 106/255,
+                                    alpha: 1)
 }

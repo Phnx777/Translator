@@ -8,6 +8,20 @@
 
 import UIKit
 
-class TranslatorConfigurator: NSObject {
+protocol TranslatorConfiguratorProtocol: class {
+    func configure(with viewController: TranslatorViewController)
+}
 
+class TranslatorConfigurator: TranslatorConfiguratorProtocol {
+    
+    func configure(with viewController: TranslatorViewController) {
+        let presenter = TranslatorPresenter(view: viewController)
+        let interactor = TranslatorInteractor(presenter: presenter)
+        let router = TranslatorRouter(viewController: viewController)
+        router.dataStore = interactor
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.router = router
+    }
+    
 }

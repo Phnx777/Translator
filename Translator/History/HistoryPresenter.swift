@@ -8,6 +8,63 @@
 
 import UIKit
 
-class HistoryPresenter: NSObject {
+protocol HistoryPresenterProtocol: class {
+    var router: HistoryRouter! { set get }
+    var filteredWords: [String] { set get }
+    func updateWords()
+    func deleteAllWords()
+    func searchWord(by str: String)
+    func process(word: String)
+}
+
+class HistoryPresenter: HistoryPresenterProtocol {
+    private let separator = " - "
+    var words = [String]() {
+        didSet {
+            filteredWords = words
+            view.reloadData()
+        }
+    }
+    
+    var filteredWords = [String]()
+    
+    var router: HistoryRouter!
+    weak var view: HistoryViewProtocol!
+    var interactor: HistoryInteractorProtocol!
+    
+    required init(view: HistoryViewProtocol) {
+        self.view = view
+    }
+    
+    func process(word: String) {
+        let w = word.components(separatedBy: separator)
+        guard w.count == 2,
+            let original = w.first,
+            let translation = w.last else {
+            return
+        }
+        router.dataStore?.word = Word(original: original,
+                                      translation: translation)
+    }
+    
+    func updateWords() {
+        words = []
+        guard let allWords = interactor.getAllWords() else {
+            return
+        }
+        words = allWords.map { $0.original + separator + $0.translation }
+    }
+    
+    func deleteAllWords() {
+        interactor.deleteAllWords()
+        updateWords()
+    }
+    
+    func searchWord(by str: String) {
+        filteredWords = words.filter { (word) -> Bool in
+            return word.lowercased().contains(str.lowercased())
+        }
+        view.reloadData()
+    }
 
 }

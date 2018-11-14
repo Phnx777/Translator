@@ -8,23 +8,69 @@
 
 import UIKit
 
-class SourceViewController: UIViewController {
+protocol SourceViewProtocol: class {
+    func showAlert(text: String)
+    func reloadData()
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class SourceViewController: UIViewController, SourceViewProtocol {
+    var presenter: SourcePresenterProtocol!
+    var configurator: SourceConfigurator = SourceConfigurator()
+    
+    @IBOutlet weak var tableView: UITableView!
+    let cellId = "sourceCell"
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        configurator.configure(with: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        configurator.configure(with: self)
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.configureView()
+        view.backgroundColor = UIColor.mainYellow
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: cellId)
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async { [weak self] in 
+            self?.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func close(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func showAlert(text: String) {
+        showAlertView(with: text)
+    }
+   
+}
 
+
+extension SourceViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.languagesNames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell?  = tableView.dequeueReusableCell(withIdentifier: cellId)
+        cell?.textLabel?.text = presenter.languagesNames[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectedLanguage = presenter.languagesNames[indexPath.row]
+        presenter.router?.routeToTranslator()
+    }
 }

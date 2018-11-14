@@ -8,22 +8,64 @@
 
 /* Begin PBXBuildFile section */
 		D04EB4072198BBDF00501DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EB4062198BBDF00501DE1 /* AppDelegate.swift */; };
-		D04EB4092198BBDF00501DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EB4082198BBDF00501DE1 /* ViewController.swift */; };
 		D04EB40C2198BBDF00501DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04EB40A2198BBDF00501DE1 /* Main.storyboard */; };
 		D04EB40F2198BBDF00501DE1 /* Translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D04EB40D2198BBDF00501DE1 /* Translator.xcdatamodeld */; };
 		D04EB4112198BBE000501DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04EB4102198BBE000501DE1 /* Assets.xcassets */; };
 		D04EB4142198BBE000501DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04EB4122198BBE000501DE1 /* LaunchScreen.storyboard */; };
+		D04EB41C2198C46000501DE1 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EB41B2198C46000501DE1 /* TranslatorViewController.swift */; };
+		D04EB4202198C7F700501DE1 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EB41F2198C7F700501DE1 /* HistoryTableViewController.swift */; };
+		D04EB4222198D68000501DE1 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EB4212198D68000501DE1 /* SourceViewController.swift */; };
+		D0764B8421999F210099615B /* SourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8321999F210099615B /* SourceRouter.swift */; };
+		D0764B8621999F390099615B /* TranslatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8521999F390099615B /* TranslatorRouter.swift */; };
+		D0764B8821999F8B0099615B /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8721999F8B0099615B /* HistoryRouter.swift */; };
+		D0764B8A2199AC170099615B /* TranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B892199AC170099615B /* TranslatorPresenter.swift */; };
+		D0764B8C2199AC300099615B /* SourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8B2199AC300099615B /* SourcePresenter.swift */; };
+		D0764B8E2199AC420099615B /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8D2199AC420099615B /* HistoryPresenter.swift */; };
+		D0764B902199AC6F0099615B /* SourceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B8F2199AC6F0099615B /* SourceInteractor.swift */; };
+		D0764B922199AC810099615B /* TranslatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B912199AC810099615B /* TranslatorInteractor.swift */; };
+		D0764B942199AC990099615B /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B932199AC990099615B /* HistoryInteractor.swift */; };
+		D0764B962199ACAE0099615B /* SourceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B952199ACAE0099615B /* SourceConfigurator.swift */; };
+		D0764B982199ACC10099615B /* TranslatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B972199ACC10099615B /* TranslatorConfigurator.swift */; };
+		D0764B9A2199ACD50099615B /* HistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B992199ACD50099615B /* HistoryConfigurator.swift */; };
+		D0764B9D2199B2D70099615B /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B9C2199B2D70099615B /* ServerService.swift */; };
+		D0764B9F2199B2E90099615B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764B9E2199B2E90099615B /* StorageService.swift */; };
+		D0764BA22199EB130099615B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764BA12199EB130099615B /* Color+Extension.swift */; };
+		D0764BA52199FC6D0099615B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764BA42199FC6D0099615B /* Language.swift */; };
+		D0764BA7219A197B0099615B /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764BA6219A197B0099615B /* LanguageService.swift */; };
+		D0764BA9219A27470099615B /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764BA8219A27470099615B /* Word.swift */; };
+		D0764BAB219A373D0099615B /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0764BAA219A373D0099615B /* ViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D04EB4032198BBDF00501DE1 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EB4062198BBDF00501DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D04EB4082198BBDF00501DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D04EB40B2198BBDF00501DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D04EB40E2198BBDF00501DE1 /* Translator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Translator.xcdatamodel; sourceTree = "<group>"; };
 		D04EB4102198BBE000501DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D04EB4132198BBE000501DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D04EB4152198BBE000501DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D04EB41B2198C46000501DE1 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
+		D04EB41F2198C7F700501DE1 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		D04EB4212198D68000501DE1 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		D0764B8321999F210099615B /* SourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRouter.swift; sourceTree = "<group>"; };
+		D0764B8521999F390099615B /* TranslatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorRouter.swift; sourceTree = "<group>"; };
+		D0764B8721999F8B0099615B /* HistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
+		D0764B892199AC170099615B /* TranslatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorPresenter.swift; sourceTree = "<group>"; };
+		D0764B8B2199AC300099615B /* SourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePresenter.swift; sourceTree = "<group>"; };
+		D0764B8D2199AC420099615B /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		D0764B8F2199AC6F0099615B /* SourceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceInteractor.swift; sourceTree = "<group>"; };
+		D0764B912199AC810099615B /* TranslatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorInteractor.swift; sourceTree = "<group>"; };
+		D0764B932199AC990099615B /* HistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
+		D0764B952199ACAE0099615B /* SourceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceConfigurator.swift; sourceTree = "<group>"; };
+		D0764B972199ACC10099615B /* TranslatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorConfigurator.swift; sourceTree = "<group>"; };
+		D0764B992199ACD50099615B /* HistoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryConfigurator.swift; sourceTree = "<group>"; };
+		D0764B9C2199B2D70099615B /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		D0764B9E2199B2E90099615B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D0764BA12199EB130099615B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		D0764BA42199FC6D0099615B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		D0764BA6219A197B0099615B /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
+		D0764BA8219A27470099615B /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		D0764BAA219A373D0099615B /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +99,83 @@
 			isa = PBXGroup;
 			children = (
 				D04EB4062198BBDF00501DE1 /* AppDelegate.swift */,
-				D04EB4082198BBDF00501DE1 /* ViewController.swift */,
+				D04EB41D2198C46500501DE1 /* Translator */,
+				D04EB4232198D68500501DE1 /* Source */,
+				D04EB41E2198C7C900501DE1 /* History */,
+				D0764B9B2199B2B40099615B /* Services */,
+				D0764BA32199FC520099615B /* Entity */,
 				D04EB40A2198BBDF00501DE1 /* Main.storyboard */,
 				D04EB4102198BBE000501DE1 /* Assets.xcassets */,
+				D0764BA02199EAF60099615B /* Extensions */,
 				D04EB4122198BBE000501DE1 /* LaunchScreen.storyboard */,
 				D04EB4152198BBE000501DE1 /* Info.plist */,
 				D04EB40D2198BBDF00501DE1 /* Translator.xcdatamodeld */,
 			);
 			path = Translator;
+			sourceTree = "<group>";
+		};
+		D04EB41D2198C46500501DE1 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				D04EB41B2198C46000501DE1 /* TranslatorViewController.swift */,
+				D0764B892199AC170099615B /* TranslatorPresenter.swift */,
+				D0764B912199AC810099615B /* TranslatorInteractor.swift */,
+				D0764B972199ACC10099615B /* TranslatorConfigurator.swift */,
+				D0764B8521999F390099615B /* TranslatorRouter.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		D04EB41E2198C7C900501DE1 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D04EB41F2198C7F700501DE1 /* HistoryTableViewController.swift */,
+				D0764B8D2199AC420099615B /* HistoryPresenter.swift */,
+				D0764B932199AC990099615B /* HistoryInteractor.swift */,
+				D0764B992199ACD50099615B /* HistoryConfigurator.swift */,
+				D0764B8721999F8B0099615B /* HistoryRouter.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D04EB4232198D68500501DE1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D04EB4212198D68000501DE1 /* SourceViewController.swift */,
+				D0764B8B2199AC300099615B /* SourcePresenter.swift */,
+				D0764B8F2199AC6F0099615B /* SourceInteractor.swift */,
+				D0764B952199ACAE0099615B /* SourceConfigurator.swift */,
+				D0764B8321999F210099615B /* SourceRouter.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D0764B9B2199B2B40099615B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D0764B9C2199B2D70099615B /* ServerService.swift */,
+				D0764B9E2199B2E90099615B /* StorageService.swift */,
+				D0764BA6219A197B0099615B /* LanguageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D0764BA02199EAF60099615B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0764BA12199EB130099615B /* Color+Extension.swift */,
+				D0764BAA219A373D0099615B /* ViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0764BA32199FC520099615B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D0764BA42199FC6D0099615B /* Language.swift */,
+				D0764BA8219A27470099615B /* Word.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +249,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0764B8E2199AC420099615B /* HistoryPresenter.swift in Sources */,
+				D0764B902199AC6F0099615B /* SourceInteractor.swift in Sources */,
+				D0764B8821999F8B0099615B /* HistoryRouter.swift in Sources */,
+				D0764BA52199FC6D0099615B /* Language.swift in Sources */,
+				D0764B922199AC810099615B /* TranslatorInteractor.swift in Sources */,
+				D0764BA7219A197B0099615B /* LanguageService.swift in Sources */,
+				D0764B982199ACC10099615B /* TranslatorConfigurator.swift in Sources */,
+				D0764B9F2199B2E90099615B /* StorageService.swift in Sources */,
+				D0764BAB219A373D0099615B /* ViewController+Extension.swift in Sources */,
+				D04EB4222198D68000501DE1 /* SourceViewController.swift in Sources */,
+				D0764B8A2199AC170099615B /* TranslatorPresenter.swift in Sources */,
+				D0764B962199ACAE0099615B /* SourceConfigurator.swift in Sources */,
+				D0764B9D2199B2D70099615B /* ServerService.swift in Sources */,
+				D0764B8421999F210099615B /* SourceRouter.swift in Sources */,
+				D0764BA22199EB130099615B /* Color+Extension.swift in Sources */,
 				D04EB40F2198BBDF00501DE1 /* Translator.xcdatamodeld in Sources */,
-				D04EB4092198BBDF00501DE1 /* ViewController.swift in Sources */,
+				D0764B9A2199ACD50099615B /* HistoryConfigurator.swift in Sources */,
 				D04EB4072198BBDF00501DE1 /* AppDelegate.swift in Sources */,
+				D0764B942199AC990099615B /* HistoryInteractor.swift in Sources */,
+				D04EB41C2198C46000501DE1 /* TranslatorViewController.swift in Sources */,
+				D0764BA9219A27470099615B /* Word.swift in Sources */,
+				D0764B8C2199AC300099615B /* SourcePresenter.swift in Sources */,
+				D0764B8621999F390099615B /* TranslatorRouter.swift in Sources */,
+				D04EB4202198C7F700501DE1 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,11 +421,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K58R7B4UGL;
 				INFOPLIST_FILE = Translator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Translator";
+				PRODUCT_BUNDLE_IDENTIFIER = anslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,11 +440,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K58R7B4UGL;
 				INFOPLIST_FILE = Translator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Translator";
+				PRODUCT_BUNDLE_IDENTIFIER = anslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

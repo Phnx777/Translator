@@ -9,5 +9,11 @@
 import UIKit
 
 class Word: NSObject {
-
+    var original: String!
+    var translation: String!
+    
+    required init(original: String, translation: String) {
+        self.original = original
+        self.translation = translation
+    }
 }

@@ -8,6 +8,18 @@
 
 import UIKit
 
-class ViewController_Extension: NSObject {
-
+extension UIViewController {
+    @objc func closeKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func showAlertView(with text: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "", message: text, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                
+            })
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

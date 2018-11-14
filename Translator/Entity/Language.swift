@@ -9,5 +9,19 @@
 import UIKit
 
 class Language: NSObject {
-
+    var name: String!
+    var code: String!
+    
+    required init(name: String, code: String) {
+        self.name = name
+        self.code = code
+    }
+    
+    static func defaultLeftLanguage() -> Language {
+        return self.init(name: "Русский", code: "ru")
+    }
+    
+    static func defaultRightLanguage() -> Language {
+        return self.init(name: "Английский", code: "en")
+    }
 }

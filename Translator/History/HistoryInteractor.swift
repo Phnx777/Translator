@@ -8,6 +8,31 @@
 
 import UIKit
 
-class HistoryInteractor: NSObject {
+protocol HistoryDataStore {
+    var word: Word? { get set }
+}
 
+protocol HistoryInteractorProtocol: class {
+    func getAllWords() -> [Word]?
+    func deleteAllWords()
+}
+
+class HistoryInteractor: HistoryInteractorProtocol, HistoryDataStore {
+    
+    weak var presenter: HistoryPresenterProtocol!
+    let storageService: StorageServiceProtocol = StorageService()
+    
+    var word: Word?
+    
+    required init(presenter: HistoryPresenterProtocol) {
+        self.presenter = presenter
+    }
+    
+    func getAllWords() -> [Word]? {
+        return storageService.getWords()
+    }
+    
+    func deleteAllWords() {
+        storageService.deleteAllWords()
+    }
 }
